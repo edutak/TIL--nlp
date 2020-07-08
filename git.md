@@ -91,6 +91,12 @@ $ git commit -m '커밋메시지'
  create mode 100644 git.md
  create mode 100644 "markdown-images/\354\272\241\354\262\230.PNG"
  create mode 100644 markdown.md
+
+$ git status
+On branch master
+# 커밋할 것도 없고, 작업한 것도 없습니다.
+nothing to commit, working tree clean
+
 ```
 
 #### `log`
@@ -119,6 +125,43 @@ $ git log --oneline
 # 최근 n개 이력을 간략하게
 $ git log --oneline -1
 6b6d274 (HEAD -> master) Init
+```
+
+## 2. 원격 저장소 활용
+
+> 원격 저장소(remote repository)를 제공하는 서비스는 많다. (gitlab, bitbucket)
+> 그 중에서 github을 기준으로 설명하겠다.
+
+### 2.1. 원격 저장소 등록
+
+> git아! 원격저장소(remote)로 등록해줘(add) origin 이라는 이름으로 URL을!
+
+```bash
+$ git remote add origin 저장소url
+```
+
+*  저장소 확인
+
+  ```bash
+  $ git remote -v
+  origin  https://github.com/edutak/TIL--nlp.git (fetch)
+  origin  https://github.com/edutak/TIL--nlp.git (push)
+  ```
+
+* 저장소 삭제
+
+  origin으로 지정된 저장소를 rm(remove)한다.
+
+  ```bash
+  $ git remote rm origin
+  ```
+
+### 2.2. `push`
+
+origin 으로 설정된 원격저장소의 master 브랜치로 push한다.
+
+```bash
+$ git push origin master
 ```
 
 
