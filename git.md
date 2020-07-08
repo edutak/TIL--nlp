@@ -60,6 +60,65 @@ nothing added to commit but untracked files present (use "git add" to track)
 ```bash
 $ git add .
 $ git status
+On branch master
+
+No commits yet
+# 커밋될 변경사항들
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   git.md
+        new file:   "markdown-images/\354\272\241\354\262\230.PNG"
+        new file:   markdown.md
+
+```
+
+* add 명령어는 아래와 같이 활용된다.
+
+  ```bash
+  $ git add .  # 현재 디렉토리 전부
+  $ git add git.md markdown.md # 특정 파일
+  $ git add markdown-images/ # 특정 디렉토리
+  ```
+
+### 1.3. `commit`
+
+> 이력을 확정 짓는 명령어
+
+```bash
+$ git commit -m '커밋메시지'
+[master (root-commit) 6b6d274] Init
+ 3 files changed, 177 insertions(+)
+ create mode 100644 git.md
+ create mode 100644 "markdown-images/\354\272\241\354\262\230.PNG"
+ create mode 100644 markdown.md
+```
+
+#### `log`
+
+> 커밋 내역들을 확인할 수 있는 명령어
+
+```bash
+$ git log
+commit 6b6d2743ba9900d64f9b910a35b925327e995b9f (HEAD -> master)
+Author: edutak <edutak.ssafy@gmail.com>
+Date:   Wed Jul 8 14:43:40 2020 +0900
+
+    Init
+    
+# 최근 n개 이력(1개)
+$ git log -1
+commit 6b6d2743ba9900d64f9b910a35b925327e995b9f (HEAD -> master)
+Author: edutak <edutak.ssafy@gmail.com>
+Date:   Wed Jul 8 14:43:40 2020 +0900
+
+    Init
+# 간략한 표현
+$ git log --oneline
+6b6d274 (HEAD -> master) Init
+
+# 최근 n개 이력을 간략하게
+$ git log --oneline -1
+6b6d274 (HEAD -> master) Init
 ```
 
 
